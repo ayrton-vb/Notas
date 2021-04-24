@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recordatorios</title>
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <style>
+      .footer{
+        padding: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="light-blue lighten-1">
+      <div class="nav-wrapper container">
+        <a href="#" class="brand-logo center">Recordatorios</a>
+      </div>
+    </nav>
+
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <div class="collection" id="lista-recordatorios">
+
+              <div class="col s12 m6 l4 collection-item">
+                <div class="card z-depth-3">
+                  <span
+                    class="badge material-icons blue-text waves-effect"
+                    style="cursor: pointer"
+                    id="cerrar"
+                  >
+                    cancel
+                  </span>
+                  <div class="card-content">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Nemo, adipisci alias? Rerum quidem harum odit iste
+                      voluptas optio, aspernatur quam fuga officia numquam
+                      dolorum alias earum eaque quasi debitis necessitatibus.
+                    </p>
+                  </div>
+                  <div class="divider"></div>
+                  <div class="footer grey-text blue-grey lighten-5">
+                    Publicado el: 23/03/2021 19:50:30
+                  </div>
+                </div>
+              </div>
+             
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fixed-action-btn">
+      <a href="" class="btn-floating btn-large teal">
+        <i class="large material-icons">create</i>
+      </a>
+      <ul>
+        <li>
+          <a
+            href="#formModal"
+            class="btn-floating indigo ligthen-3 modal-trigger"
+          >
+            <i class="material-icons">add</i>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="formModal" class="modal">
+      <div class="modal-content">
+        <div class="row">
+          <form class="col s12" id="formulario">
+            <div class="input-field">
+              <i class="material-icons prefix">edit</i>
+              <textarea
+                name="nota"
+                id="nota"
+                class="materialize-textarea"
+                onkeydown=verificarTextArea()
+              ></textarea>
+              <label for="nota">Escriva el contenido de su recordatorio</label>
+            </div>
+            <div class="center-align"></div>
+            <button
+              class="waves-effect waves-ligth btn modal-close"
+              id="boton"
+              type="submit"
+              disabled
+            >
+              <i class="material-icons left">send</i>
+              Insertar nueva nota
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script src="script.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let boton = document.querySelectorAll(".fixed-action-btn");
+        let inicializar = M.FloatingActionButton.init(boton);
+
+        let modal = document.querySelectorAll(".modal");
+        inicializar = M.Modal.init(modal);
+      });
+    </script>
+  </body>
+</html>
+
